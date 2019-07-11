@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // {} respresents An Epty Object
+      var person = {
+        fname: "Murali"
+      };
+      person.lname = "Krishna";
+      person["email"] = "vmurali@gmail.com";
+      console.log(person);
+
+      //   document.write(
+      //     person.fname + " <br> " + person.lname + "<br>" + person.email
+      //   );
+
+      for (abc in person) {
+        document.write(abc + " : " + person[abc] + "<br>");
+      }
+    </script>
+  </body>
+</html>
