@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sayHello()">Click</button>
+    <h2 onmouseover="changecolor()" id="heading" onmouseout="changeBack()">
+      Hello World
+    </h2>
+    <input
+      type="text"
+      onfocus="changeBackGround()"
+      id="myInput"
+      onblur="changeBackGroundBack()"
+    />
+    <select name="" id="mySelect" onchange="getLatestValues()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+    <script>
+      function getLatestValues() {
+        var lateste = document.getElementById("mySelect").value;
+        console.log(lateste);
+      }
+      function changeBackGroundBack() {
+        document.getElementById("myInput").style.background = "";
+      }
+      function changeBackGround() {
+        document.getElementById("myInput").style.background = "lightgrey";
+      }
+      function changecolor() {
+        document.getElementById("heading").style.color = "red";
+      }
+      function sayHello() {
+        alert("You Have Clicked");
+      }
+
+      function changeBack() {
+        document.getElementById("heading").style.color = "";
+      }
+    </script>
+  </body>
+</html>
