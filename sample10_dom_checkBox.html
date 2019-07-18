@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Subjects</label><br />
+    <input type="checkbox" value="HTML" name="subject" />HTML <br />
+    <input type="checkbox" value="CSS" name="subject" />CSS <br />
+    <input type="checkbox" value="JS" name="subject" />JS <br />
+    <input type="checkbox" value="Angular" name="subject" />Angular <br />
+
+    <button onclick="showCbox()">Show Values</button>
+    <script>
+      function showCbox() {
+        var cboxValue = [];
+        var cboxes = document.getElementsByName("subject");
+        for (i = 0; i < cboxes.length; i++) {
+          console.log(cboxes[i].checked);
+          if (cboxes[i].checked) {
+            cboxValue.push(cboxes[i].value);
+          }
+        }
+        console.log(cboxValue);
+      }
+    </script>
+  </body>
+</html>

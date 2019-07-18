@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Subjects</label><br />
+
+    <input type="radio" value="JS" name="subject" />JS <br />
+    <input type="radio" value="Angular" name="subject" />Angular <br />
+
+    <button onclick="showCbox()">Show Values</button>
+    <script>
+      function showCbox() {
+        var radioValue;
+        var cboxes = document.getElementsByName("subject");
+        for (i = 0; i < cboxes.length; i++) {
+          console.log(cboxes[i].checked);
+          if (cboxes[i].checked) {
+            radioValue = cboxes[i].value;
+          }
+        }
+        console.log(radioValue);
+      }
+    </script>
+  </body>
+</html>
