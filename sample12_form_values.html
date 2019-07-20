@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          One of three columns
+        </div>
+        <div class="col-sm">
+          <form>
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="fname"
+                aria-describedby="emailHelp"
+                placeholder="Enter First Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="fname">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lname"
+                aria-describedby="emailHelp"
+                placeholder="Enter Last Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Gender</label><br />
+              <input
+                type="radio"
+                id="email"
+                name="gender"
+                value="male"
+                placeholder="Enter email"
+              />Male
+              <input
+                type="radio"
+                id="email"
+                name="gender"
+                value="female"
+                placeholder="Enter email"
+              />Female
+            </div>
+
+            <div class="form-group">
+              <label for="">Roles</label><br />
+              <input type="checkbox" name="role" id="" value="UI Developer" />UI
+              Developer
+              <br />
+              <input
+                type="checkbox"
+                name="role"
+                id=""
+                value="Front End
+                Developer "
+              />
+
+              Front End Developer
+              <br />
+              <input type="checkbox" name="role" value="HTML Developer" />HTML
+              Developer <br />
+              <input
+                type="checkbox"
+                name="role"
+                id=""
+                value="CSS Developer"
+              />CSS Developer <br />
+
+              <input
+                type="checkbox"
+                name="role"
+                id=""
+                value="Angular Developer"
+              />Angular Developer <br />
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="getData()">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="col-sm">
+          One of three columns
+        </div>
+      </div>
+    </div>
+    <script src="sample12_form_values.js"></script>
+  </body>
+</html>
