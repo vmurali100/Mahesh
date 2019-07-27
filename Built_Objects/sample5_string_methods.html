@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myUl"></ul>
+    <script>
+      var data = [
+        {
+          fname: "Cindy",
+          lname: "Fournier",
+          tel: "(668)956-5680",
+          address: "3059 Vestibulum Dr",
+          city: "Brunswick",
+          state: "TX",
+          zip: 67899
+        },
+        {
+          fname: "Fiaze",
+          lname: "Steuernagel",
+          tel: "(780)677-2495",
+          address: "4209 Curabitur Rd",
+          city: "Sacramento",
+          state: "OK",
+          zip: 68629
+        },
+        {
+          fname: "Homma",
+          lname: "Zensen",
+          tel: "(173)852-4284",
+          address: "7999 Etiam Rd",
+          city: "Wabash",
+          state: "FL",
+          zip: 80932
+        },
+        {
+          fname: "Jonathan",
+          lname: "Mahan",
+          tel: "(869)645-5295",
+          address: "846 Amet Ct",
+          city: "Litchfield Park",
+          state: "MD",
+          zip: 99297
+        },
+        {
+          fname: "Monika",
+          lname: "Ekekwe",
+          tel: "(238)832-1533",
+          address: "3085 Tortor Rd",
+          city: "Smyrna",
+          state: "IN",
+          zip: 21757
+        },
+        {
+          fname: "Annabelle",
+          lname: "Ghiselli",
+          tel: "(264)856-5247",
+          address: "9960 Lacus St",
+          city: "Wilson",
+          state: "NM",
+          zip: 72341
+        },
+        {
+          fname: "Catherine",
+          lname: "Apotheloz",
+          tel: "(798)848-4998",
+          address: "1059 Tempor Ln",
+          city: "Thornton",
+          state: "WV",
+          zip: 65431
+        },
+        {
+          fname: "Claire",
+          lname: "Northrop",
+          tel: "(900)800-7475",
+          address: "6783 Massa St",
+          city: "Senoia",
+          state: "CA",
+          zip: 64467
+        },
+        {
+          fname: "Karl",
+          lname: "Ulvestad",
+          tel: "(298)707-9453",
+          address: "7712 Augue Ln",
+          city: "Cassatt",
+          state: "IL",
+          zip: 13907
+        },
+        {
+          fname: "Augustine",
+          lname: "Hodgson",
+          tel: "(551)491-3003",
+          address: "791 Libero Ct",
+          city: "Frankfort",
+          state: "CO",
+          zip: 18599
+        }
+      ];
+      localStorage.setItem("data", JSON.stringify(data));
+      for (i = 0; i < data.length; i++) {
+        var li = document.createElement("li");
+        var anch = document.createElement("a");
+        anch.innerHTML = data[i].fname;
+        anch.setAttribute("href", "userDetails.html?=" + i);
+        li.appendChild(anch);
+        document.getElementById("myUl").appendChild(li);
+      }
+    </script>
+  </body>
+</html>

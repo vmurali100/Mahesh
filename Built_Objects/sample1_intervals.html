@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center " id="time">00:00</h1>
+    <img src="1.jpeg" alt="" style="width: 600px; height:400px" id="myImage" />
+    <script>
+      var imgNo = 1;
+      function cheangeImage() {
+        document.getElementById("myImage").src = imgNo + ".jpg";
+      }
+
+      document.getElementById("myImage").onmouseover = function() {
+        clearInterval(int);
+      };
+
+      document.getElementById("myImage").onmouseout = function() {
+        startInterval();
+      };
+
+      function startInterval() {
+        int = setInterval(function() {
+          cheangeImage();
+          imgNo++;
+          if (imgNo == 6) {
+            imgNo = 1;
+          }
+        }, 1000);
+      }
+
+      function showTime() {
+        var todaysDate = new Date();
+
+        document.getElementById(
+          "time"
+        ).innerHTML = todaysDate.toLocaleTimeString();
+      }
+
+      setInterval(function() {
+        showTime();
+      }, 1000);
+      //   setTimeout(function() {
+      //     console.log("I am going to Execute After 4 seconds");
+      //   }, 5000);
+
+      //   setInterval(function() {
+      //     console.log("I will excute every 5 seconds");
+      //     window.close();
+      //   }, 5000);
+
+      //   var todayDate = new Date();
+      //   console.log(todayDate);
+    </script>
+  </body>
+</html>

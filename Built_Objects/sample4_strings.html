@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var mesage = " Helo Bengaluru .. How is Bengaluru weather ?";
+
+      console.log(mesage.length);
+      console.log(mesage.search("Bengaluru"));
+      console.log(mesage.substr(6, 9));
+      console.log(mesage.substring(6, 15));
+
+      var word = mesage.match(/Bengaluru/g);
+      console.log(word);
+
+      console.log(mesage.includes("Bengaluru"));
+    </script>
+  </body>
+</html>

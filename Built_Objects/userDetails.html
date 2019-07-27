@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button><a href="sample5_string_methods.html">Go Back</a></button>
+    <h2>Welcome to User Details</h2>
+    <div id="demo"></div>
+    <script>
+      var data = JSON.parse(localStorage.getItem("data"));
+      var inde = window.location.search.split("=")[1];
+      var results = "";
+      console.log(data[inde]);
+
+      for (a in data[inde]) {
+        results += data[inde][a] + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = results;
+    </script>
+  </body>
+</html>
