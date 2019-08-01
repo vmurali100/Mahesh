@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <button onclick="getData()">Click</button>
+    <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody id="myTable">
+             
+            </tbody>
+          </table>
+    <script>
+        function getData(){
+            var getInfo = new XMLHttpRequest;
+
+            getInfo.onreadystatechange = function (){
+                if(getInfo.readyState == 4 && getInfo.status == 200){
+                    data = JSON.parse(getInfo.response)
+                    console.log(data)
+                    displayUsers(data)
+                }   
+            }
+            getInfo.open("GET","http://localhost:3000/users")
+            getInfo.send()
+        } 
+
+        function displayUsers(users){
+  document.getElementById("myTable").innerHTML = ""
+
+  for(i=0;i<users.length;i++){
+    var tr = document.createElement("tr")
+    var obj = users[i]
+    displayObject(tr,obj)
+    document.getElementById("myTable").appendChild(tr)
+  }
+}    
+
+function displayObject(tr,obj){
+  for(a in obj){
+    var td = document.createElement("td")
+    td.innerHTML = obj[a]
+    tr.appendChild(td)
+  }
+
+  var editTd = document.createElement("td")
+  var deleteTd = document.createElement("td")
+
+  var editButton= document.createElement("button")
+  editButton.innerHTML = "Edit"
+  editButton.setAttribute("class","btn btn-info")
+  editButton.setAttribute("onclick","editUser("+i+")")
+
+  var deleteButton= document.createElement("button")
+  deleteButton.setAttribute("class","btn btn-danger")
+  deleteButton.setAttribute("onclick","deleteuser("+i+")")
+
+  deleteButton.innerHTML = "Delete";
+
+  editTd.appendChild(editButton)
+  deleteTd.appendChild(deleteButton)
+
+  tr.appendChild(editTd)
+  tr.appendChild(deleteTd)
+}
+
+
+function deleteuser(i){
+    var getInfo = new XMLHttpRequest;
+
+getInfo.onreadystatechange = function (){
+    if(getInfo.readyState == 4 && getInfo.status == 200){
+        var data = JSON.parse(getInfo.response)
+        console.log(data)
+        getData()    }   
+}
+getInfo.open("DELETE","http://localhost:3000/users/"+data[i].id)
+getInfo.setRequestHeader("Content-Type","application/json")
+getInfo.send()
+}
+
+
+</script>
+</body>
+</html>
